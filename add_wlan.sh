@@ -15,7 +15,7 @@ sudo systemctl restart NetworkManager
 
 sleep 10
 
-touch wlan.conf
+touch /home/orangepi/opizero-hotspot/wlan.conf
 sudo nmcli -t -f SSID dev wifi list --rescan yes >/home/orangepi/opizero-hotspot/wlan.conf
 
 sudo nmcli dev wifi connect $name password $password

@@ -6,7 +6,7 @@ systemctl restart NetworkManager
 
 sleep 10
 
-touch wlan.conf
+touch /home/orangepi/opizero-hotspot/wlan.conf
 nmcli -t -f SSID dev wifi list --rescan yes > /home/orangepi/opizero-hotspot/wlan.conf
 
 if nmcli -t -f DEVICE,STATE device | grep -q '^wlan0:connected$'; then
