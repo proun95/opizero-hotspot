@@ -1,0 +1,7 @@
+[Unit]
+Description=Launch hotspot if no connection
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/orangepi/launch_hotspot.sh
