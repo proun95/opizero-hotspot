@@ -7,7 +7,7 @@ This repository contains a collection of Bash scripts designed to simplify Wi-Fi
 - Connection to preferred networks when available
 - Automatic creation of a Wi-Fi access point when no known networks are available
 
-## Installation:
+## Installation
 ```
 git clone https://github.com/proun95/opizero-hotspot.git ~/opizero-hotspot
 cd ~/opizero-hotspot
