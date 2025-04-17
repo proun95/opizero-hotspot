@@ -36,7 +36,7 @@ do
 		sudo chmod +x /home/orangepi/opizero-hotspot/add-wlan.sh
 		sudo chmod +x /home/orangepi/opizero-hotspot/opizero-hotspot.sh
 		sudo chmod +x /home/orangepi/opizero-hotspot/launch-hotspot.sh
-		sudo echo "alias opihotspot='/home/orangepi/opizero-hotspot/add opizero-hotspot.sh'"
+		sudo echo "alias opihotspot='/home/orangepi/opizero-hotspot/add opizero-hotspot.sh'" >> .bashrc
 		sudo source /home/orangepi/.bashrc
 		sudo cp -f /home/orangepi/opizero-hotspot/launch-hotspot.service /etc/systemd/system/launch-hotspot.service
 		sudo cp -f /home/orangepi/opizero-hotspot/launch-hotspot.timer /etc/systemd/system/launch-hotspot.timer
