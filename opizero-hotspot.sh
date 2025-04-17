@@ -37,12 +37,13 @@ do
 		sudo chmod +x /home/orangepi/opizero-hotspot/opizero-hotspot.sh
 		sudo chmod +x /home/orangepi/opizero-hotspot/launch-hotspot.sh
 		sudo echo "alias opihotspot='/home/orangepi/opizero-hotspot/opizero-hotspot.sh'" >> /home/orangepi/.bashrc
-		sudo source /home/orangepi/.bashrc
+		source /home/orangepi/.bashrc
 		sudo cp -f /home/orangepi/opizero-hotspot/launch-hotspot.service /etc/systemd/system/launch-hotspot.service
 		sudo cp -f /home/orangepi/opizero-hotspot/launch-hotspot.timer /etc/systemd/system/launch-hotspot.timer
 		sudo cp -f /home/orangepi/opizero-hotspot/NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 		sudo systemctl daemon-reexec
 		sudo systemctl daemon-reload
+		sudo systemctl enable --now launch-hotspot.timer
 		#journalctl -u wifi-check.service
 		#systemctl list-timers
 		echo "Reboot?"
@@ -86,7 +87,7 @@ do
 
 	elif [ $item -eq 5 ]
 	then
-		rm -v /etc/netplan/90*
+		sudo rm -v /etc/netplan/90*
 		
 	elif [ $item -eq 6 ]
 	then

@@ -4,4 +4,4 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/orangepi/launch-hotspot.sh
+ExecStart=/home/orangepi/opizero-hotspot/launch-hotspot.sh
