@@ -26,7 +26,8 @@ do
 	echo "3. Stop hotspot/Return WLAN settings"
 	echo "4. Add WLAN"
 	echo "5. Delete all WLANs"
-	echo "6. Exit"
+	echo "6. Remove all settings"
+	echo "7. Exit"
 	read -p 'Choose item: ' item
 	clear
 	
@@ -39,6 +40,7 @@ do
 		sudo source /home/orangepi/.bashrc
 		sudo cp -f /home/orangepi/opizero-hotspot/launch_hotspot.service /etc/systemd/system/launch_hotspot.service
 		sudo cp -f /home/orangepi/opizero-hotspot/launch_hotspot.timer /etc/systemd/system/launch_hotspot.timer
+		sudo cp -f /home/orangepi/opizero-hotspot/NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 		sudo systemctl daemon-reexec
 		sudo systemctl daemon-reload
 		#journalctl -u wifi-check.service
@@ -85,8 +87,19 @@ do
 	elif [ $item -eq 5 ]
 	then
 		rm -v /etc/netplan/90*
-
+		
 	elif [ $item -eq 6 ]
+	then
+		sudo systemctl stop launch_hotspot.timer
+		sudo systemctl disable launch_hotspot.timer
+		sudo rm /etc/systemd/system/launch_hotspot.service
+		sudo rm /etc/systemd/system/launch_hotspot.timer
+		sudo cp -f /home/orangepi/opizero-hotspot/NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
+		sudo systemctl restart NetworkManager
+		sudo systemctl daemon-reexec
+		sudo systemctl daemon-reload
+
+	elif [ $item -eq 7 ]
 	then
 		exit
 	fi
