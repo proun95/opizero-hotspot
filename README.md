@@ -11,7 +11,7 @@ This repository contains a collection of Bash scripts designed to simplify Wi-Fi
 ```
 git clone https://github.com/proun95/opizero-hotspot.git ~/opizero-hotspot
 cd ~/opizero-hotspot
-sudo bash opizero_hotspot.sh
+sudo bash opizero-hotspot.sh
 ```
 
 ## Usage
