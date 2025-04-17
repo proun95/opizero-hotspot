@@ -33,13 +33,13 @@ do
 	
 	if [ $item -eq 1 ]
 	then
-		sudo chmod +x /home/orangepi/opizero-hotspot/add_wlan.sh
+		sudo chmod +x /home/orangepi/opizero-hotspot/add-wlan.sh
 		sudo chmod +x /home/orangepi/opizero-hotspot/add opizero-hotspot.sh
-		sudo chmod +x /home/orangepi/opizero-hotspot/add launch_hotspot.sh
+		sudo chmod +x /home/orangepi/opizero-hotspot/add launch-hotspot.sh
 		sudo echo "alias opihotspot='/home/orangepi/opizero-hotspot/add opizero-hotspot.sh'"
 		sudo source /home/orangepi/.bashrc
-		sudo cp -f /home/orangepi/opizero-hotspot/launch_hotspot.service /etc/systemd/system/launch_hotspot.service
-		sudo cp -f /home/orangepi/opizero-hotspot/launch_hotspot.timer /etc/systemd/system/launch_hotspot.timer
+		sudo cp -f /home/orangepi/opizero-hotspot/launch-hotspot.service /etc/systemd/system/launch-hotspot.service
+		sudo cp -f /home/orangepi/opizero-hotspot/launch-hotspot.timer /etc/systemd/system/launch-hotspot.timer
 		sudo cp -f /home/orangepi/opizero-hotspot/NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 		sudo systemctl daemon-reexec
 		sudo systemctl daemon-reload
@@ -82,7 +82,7 @@ do
 	
 	elif [ $item -eq 4 ]
 	then
-		sudo bash /home/orangepi/opizero-hotspot/add_wlan.sh
+		sudo bash /home/orangepi/opizero-hotspot/add-wlan.sh
 
 	elif [ $item -eq 5 ]
 	then
@@ -90,10 +90,10 @@ do
 		
 	elif [ $item -eq 6 ]
 	then
-		sudo systemctl stop launch_hotspot.timer
-		sudo systemctl disable launch_hotspot.timer
-		sudo rm /etc/systemd/system/launch_hotspot.service
-		sudo rm /etc/systemd/system/launch_hotspot.timer
+		sudo systemctl stop launch-hotspot.timer
+		sudo systemctl disable launch-hotspot.timer
+		sudo rm /etc/systemd/system/launch-hotspot.service
+		sudo rm /etc/systemd/system/launch-hotspot.timer
 		sudo cp -f /home/orangepi/opizero-hotspot/NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 		sudo systemctl restart NetworkManager
 		sudo systemctl daemon-reexec

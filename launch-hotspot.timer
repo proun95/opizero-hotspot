@@ -4,7 +4,7 @@ Description=Run WiFi check script 20 seconds after boot
 [Timer]
 OnBootSec=20sec
 AccuracySec=1sec
-Unit=launch_hotspot.service
+Unit=launch-hotspot.service
 
 [Install]
 WantedBy=timers.target
