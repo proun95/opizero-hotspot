@@ -13,6 +13,6 @@ if nmcli -t -f DEVICE,STATE device | grep -q '^wlan0:connected$'; then
     echo "wlan0 connected"
 else
     echo "wlan0 diconnected, turn hotspot on"
-        sudo create_ap -m nat wlan0 end0 'RotorHazard' 'qwe1!QWE' --no-virt
+        sudo create_ap -m nat wlan0 end0 'RotorHazard' '12345678' --no-virt
         sleep 20
 fi

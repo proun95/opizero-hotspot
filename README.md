@@ -16,6 +16,11 @@ If you clone to difference directory (default: /home/orangepi/opizero-hotspot) c
 ```
 sed -i 's|/home/orangepi/opizero-hotspot|YOUR_PATH|g' *
 ```
+If you want to change hotspot SSID or password (default SSID: RotorHazard, password: 12345678):
+```
+sed -i 's|RotorHazard|YOUR_SSID|g' *
+sed -i 's|12345678|YOUR_PASSWORD|g' *
+```
 ## Usage
 ```
 sudo bash opizero-hotspot.sh

@@ -64,12 +64,12 @@ do
 			read -p 'Choose item: ' item
 			if [ $item -eq 1 ]
 			then
-				sudo create_ap -m nat wlan0 end0 'RotorHazard' 'qwe1!QWE' --no-virt --daemon
+				sudo create_ap -m nat wlan0 end0 'RotorHazard' '12345678' --no-virt --daemon
 				sleep 10
 			fi
 		else
 			echo "wlan0 diconnected, turn hotspot on"
-			sudo create_ap -m nat wlan0 end0 'RotorHazard' 'qwe1!QWE' --no-virt --daemon
+			sudo create_ap -m nat wlan0 end0 'RotorHazard' '12345678' --no-virt --daemon
 			sleep 10
 		fi
 
