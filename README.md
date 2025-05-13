@@ -9,11 +9,15 @@ This repository contains a collection of Bash scripts designed to simplify Wi-Fi
 
 ## Installation
 ```
-git clone https://github.com/proun95/opizero-hotspot.git ~/opizero-hotspot
-cd ~/opizero-hotspot
+git clone https://github.com/proun95/opizero-hotspot.git
+cd opizero-hotspot
+```
+If you clone to difference directory (default: /home/orangepi/opizero-hotspot) change main directory:
+```
+sed -i 's|/home/orangepi/opizero-hotspot|YOUR_PATH|g' *
+```
+## Usage
+```
 sudo bash opizero-hotspot.sh
 ```
-
-## Usage
-
 After setup you can use ```opihotspot``` for launch because alias was added.
